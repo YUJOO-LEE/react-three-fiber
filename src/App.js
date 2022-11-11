@@ -65,7 +65,11 @@ const Floor = (props)=>{
 }
 
 const handlePointerDown = (e)=>{
-	console.log(e);
+	console.log(e.object);
+	// 클릭한 object 에 active 키값을 만들고 true 로 지정
+	e.object.active = e.object.active ? false : true;
+	// 해당 정보값을 다시 윈도우 전역객체에 옮겨담기
+	window.activeMesh = e.object;
 }
 
 const handlePointerEnter = (e)=>{
@@ -75,9 +79,12 @@ const handlePointerEnter = (e)=>{
 }
 
 const handlePointerLeave = (e)=>{
-	e.object.scale.x = 1;
-	e.object.scale.y = 1;
-	e.object.scale.z = 1;
+	// 오브젝트 클릭 시 active 키값이 True 아닐때만 동작
+	if (!e.object.active) {
+		e.object.scale.x = 1;
+		e.object.scale.y = 1;
+		e.object.scale.z = 1;
+	}
 }
 
 function App() {
@@ -95,7 +102,10 @@ function App() {
 				<ambientLight intensity={0.2} />
 				<Bulb position={[0, 3, 0]} />
 				<Suspense fallback={null}>
-					<Box position={[0, 1, 0]} />
+					<Box position={[-2, 1, 0]} />
+				</Suspense>
+				<Suspense fallback={null}>
+					<Box position={[2, 1, 0]} />
 				</Suspense>
 				<Floor position={[0, -0.5, 0]} />
 			</Canvas>
