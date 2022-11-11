@@ -1,10 +1,15 @@
 import './scss/style.scss';
 //import Orbit from './components/Orbit';
-import { Canvas, extend, useFrame } from 'react-three-fiber';
+import { Canvas, extend, useFrame, useThree } from 'react-three-fiber';
 import { useRef } from 'react';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-// extend({ OrbitControls});
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+extend({ OrbitControls});
 
+// 화면 축 변경 컴포넌트
+const Orbit = ()=>{
+	const {camera, gl} = useThree();
+	return <orbitControls args={[camera, gl.domElement]} />
+}
 
 const Box = ()=>{
 	const ref = useRef(null);
@@ -27,7 +32,7 @@ function App() {
 				camera={{position:[7,7,7]}}	// x, y, z
 			>
 				<axesHelper args={[6]} />
-				{/* <Orbit /> */}
+				<Orbit />
 				<Box />
 			</Canvas>
 		</figure>
