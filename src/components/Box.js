@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useFrame, useLoader } from 'react-three-fiber';
 
 const handlePointerDown = (e)=>{
-	//console.log(e.object);
+	console.log(e.object.active);
 	// 클릭한 object 에 active 키값을 만들고 true 로 지정
 	e.object.active = true;
 	// 해당 정보값을 다시 윈도우 전역객체에 옮겨담기
