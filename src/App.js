@@ -11,15 +11,25 @@ const Orbit = ()=>{
 	return <orbitControls args={[camera, gl.domElement]} />
 }
 
-const Box = ()=>{
+const Box = (props)=>{
 	const ref = useRef(null);
 	useFrame(()=>{
 		ref.current.rotation.z += 0.01;
 	})
 	return (
-		<mesh ref={ref}>
+		<mesh ref={ref} {...props}
+		>
 			<boxGeometry />
-			<meshBasicMaterial color='blue' />
+			<meshPhysicalMaterial color='blue' />
+		</mesh>
+	);
+}
+
+const Floor = (props)=>{
+	return(
+		<mesh {...props}>
+			<boxGeometry args={[20, 1, 10]}/>
+			<meshPhysicalMaterial />
 		</mesh>
 	);
 }
@@ -29,11 +39,14 @@ function App() {
 		<figure>
 			<Canvas // shadowMap 
 				style={{background: '#111'}}
-				camera={{position:[7,7,7]}}	// x, y, z
+				camera={{position:[3,3,3]}}	// x, y, z
 			>
 				<axesHelper args={[6]} />
 				<Orbit />
-				<Box />
+
+				<ambientLight intensity={0.2} />
+				<Box position={[-1, 1, 2]} />
+				<Floor position={[0, -0.5, 0]} />
 			</Canvas>
 		</figure>
 	);
