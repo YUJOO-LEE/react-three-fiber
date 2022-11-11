@@ -67,8 +67,13 @@ const Floor = (props)=>{
 const handlePointerDown = (e)=>{
 	console.log(e.object);
 	// 클릭한 object 에 active 키값을 만들고 true 로 지정
-	e.object.active = e.object.active ? false : true;
+	e.object.active = true;
 	// 해당 정보값을 다시 윈도우 전역객체에 옮겨담기
+
+	if (window.activeMesh) {
+		scaleDown(window.activeMesh);
+		window.activeMesh.active = false;
+	}
 	window.activeMesh = e.object;
 }
 
@@ -85,6 +90,12 @@ const handlePointerLeave = (e)=>{
 		e.object.scale.y = 1;
 		e.object.scale.z = 1;
 	}
+}
+
+const scaleDown = (object)=>{
+	object.scale.x = 1;
+	object.scale.y = 1;
+	object.scale.z = 1;
 }
 
 function App() {
