@@ -1,14 +1,11 @@
-import { useThree } from 'react-three-fiber';
+import { extend, useThree } from 'react-three-fiber';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+extend({ OrbitControls});
 
 // 중심축 생성
 function Orbit() {
-  const { camera, gl  } = useThree();
-
-  return (
-    <orbitControls attach='orbitControls'
-      args={[camera, gl.domElement]}
-    ></orbitControls>
-  )
+	const {camera, gl} = useThree();
+	return <orbitControls args={[camera, gl.domElement]} />
 }
 
-export default Orbit
+export default Orbit;
