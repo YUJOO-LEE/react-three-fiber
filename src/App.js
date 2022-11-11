@@ -65,7 +65,7 @@ const Floor = (props)=>{
 }
 
 const handlePointerDown = (e)=>{
-	console.log(e.object);
+	//console.log(e.object);
 	// 클릭한 object 에 active 키값을 만들고 true 로 지정
 	e.object.active = true;
 	// 해당 정보값을 다시 윈도우 전역객체에 옮겨담기
@@ -99,8 +99,20 @@ const scaleDown = (object)=>{
 }
 
 function App() {
+
+	const handleClick = (e)=>{
+		if (!window.activeMesh) return;
+		window.activeMesh.material.color = new THREE.Color(e.target.style.background);
+	}
+
 	return (
 		<figure>
+			<article className='colorPicker'>
+				<div style={{background: 'blue'}} onClick={handleClick}></div>
+				<div style={{background: 'red'}} onClick={handleClick}></div>
+				<div style={{background: 'green'}} onClick={handleClick}></div>
+				<div style={{background: 'transparent'}} onClick={handleClick}></div>
+			</article>
 			<Canvas
 				shadowMap
 				style={{background: '#111'}}
