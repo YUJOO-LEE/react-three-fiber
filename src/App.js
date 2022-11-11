@@ -2,7 +2,6 @@ import './scss/style.scss';
 //import Orbit from './components/Orbit';
 import { Canvas, extend, useFrame, useThree } from 'react-three-fiber';
 import { useRef } from 'react';
-import { meshPhongMaterial } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 extend({ OrbitControls});
 
@@ -20,7 +19,7 @@ const Bulb = (props)=>{
 				intensity={1}
 			/>
 			{/* 반지금, 가로면분할, 세로면분할 */}
-			<sphereBufferGeometry args={[0.5, 20, 20]} />
+			<sphereGeometry args={[0.5, 20, 20]} />
 			<meshPhongMaterial emissive='yellow'/>
 		</mesh>
 	);
@@ -44,9 +43,11 @@ const Box = (props)=>{
 
 const Floor = (props)=>{
 	return(
-		<mesh {...props}>
+		<mesh {...props}
+			receiveShadow
+		>
 			<boxGeometry args={[20, 1, 10]}/>
-			<meshPhysicalMaterial />
+			<meshPhysicalMaterial color='white' />
 		</mesh>
 	);
 }
@@ -55,7 +56,8 @@ const Floor = (props)=>{
 function App() {
 	return (
 		<figure>
-			<Canvas // shadowMap 
+			<Canvas
+				shadowMap
 				style={{background: '#111'}}
 				camera={{position:[3, 3, 3]}}	// x, y, z
 			>
