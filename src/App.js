@@ -1,7 +1,9 @@
 import './scss/style.scss';
 //import Orbit from './components/Orbit';
-import { Canvas, extend, useFrame, useThree } from 'react-three-fiber';
-import { useRef } from 'react';
+import * as THREE from 'three';
+import { Canvas, extend, useFrame, useLoader, useThree } from 'react-three-fiber';
+//Suspense 리액트 컴포넌트 안쪽에서 비동기 실행되는 구문을 동기화
+import { useRef, Suspense } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 extend({ OrbitControls});
 
@@ -27,16 +29,26 @@ const Bulb = (props)=>{
 
 const Box = (props)=>{
 	const ref = useRef(null);
+	const texture = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/img/wood.jpg`);
 	useFrame(()=>{
-		ref.current.rotation.z += 0.01;
+		ref.current.rotation.x += 0.01;
+		ref.current.rotation.y += 0.01;
 	})
 	return (
 		<mesh ref={ref} {...props}
 			receiveShadow
 			castShadow
+			onPointerDown={handlePointerDown}
+			onPointerEnter={handlePointerEnter}
+			onPointerLeave={handlePointerLeave}
 		>
 			<boxGeometry />
-			<meshPhysicalMaterial color='blue' />
+			<meshPhysicalMaterial
+				map={texture} 
+				// 컬러 지정 color='white' 
+				// 유리 느낌 roughness={0} clearcoat={1} transparent transmission={0.5} reflectivity={1} side={THREE.DoubleSide}
+				// 메탈 느낌 metalness={1} roughness={0.5} clearcoat={0.5}
+			/>
 		</mesh>
 	);
 }
@@ -52,6 +64,21 @@ const Floor = (props)=>{
 	);
 }
 
+const handlePointerDown = (e)=>{
+	console.log(e);
+}
+
+const handlePointerEnter = (e)=>{
+	e.object.scale.x = 1.5;
+	e.object.scale.y = 1.5;
+	e.object.scale.z = 1.5;
+}
+
+const handlePointerLeave = (e)=>{
+	e.object.scale.x = 1;
+	e.object.scale.y = 1;
+	e.object.scale.z = 1;
+}
 
 function App() {
 	return (
@@ -59,14 +86,17 @@ function App() {
 			<Canvas
 				shadowMap
 				style={{background: '#111'}}
-				camera={{position:[3, 3, 3]}}	// x, y, z
+				camera={{position:[1, 5, 1]}}	// x, y, z
 			>
 				<axesHelper args={[6]} />
 				<Orbit />
 
+				{/* <fog attach='fog' args={['white', 1, 10]} /> */}
 				<ambientLight intensity={0.2} />
 				<Bulb position={[0, 3, 0]} />
-				<Box position={[-1, 1, 2]} />
+				<Suspense fallback={null}>
+					<Box position={[0, 1, 0]} />
+				</Suspense>
 				<Floor position={[0, -0.5, 0]} />
 			</Canvas>
 		</figure>
