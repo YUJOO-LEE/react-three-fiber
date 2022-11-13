@@ -4,8 +4,9 @@ const Floor = (props)=>{
 	return(
 		<mesh {...props}
 			receiveShadow
+			castShadow
 		>
-			<boxGeometry args={[20, 1, 10]}/>
+			<boxGeometry args={[1000, 1, 1000]}/>
 			<meshPhysicalMaterial color='white' />
 		</mesh>
 	);
