@@ -23,7 +23,7 @@ function App() {
 				shadowMap
 				colorManagement
 				style={{background: '#222'}}
-				camera={[50, 300, 220]}
+				camera={[25, 150, 110]}
 			>
 				<axesHelper args={[5]} />
 				<CameraControls />
@@ -31,41 +31,40 @@ function App() {
 				<fog attach='fog' args={['#111', 20, 2000]} />
 				<ambientLight intensity={0.5} />
 
-				{/* <Dragable> */}
-					<Suspense fallback={<LoadingBox />}>
-						<Model path={`${process.env.PUBLIC_URL}/office/scene.gltf`}
-							// position={[200, 5, -350]} // hippie 용
-							position={[-800, 70, -500]} 
-							scale={[10, 10, 10]} // office
+				<Suspense fallback={<LoadingBox />}>
+					<Model path={`${process.env.PUBLIC_URL}/office/scene.gltf`}
+						// position={[200, 5, -350]} // hippie 용
+						position={[-400, 35, -250]} 
+						scale={[5, 5, 5]} // office
+					/>
+					<Dragable>
+						<Bulb position={[60, 60, -10]}
+							intensity={2}
+							color='#FFE08C'
+							distance={100}
+							decay={0.2}
 						/>
-						<Dragable>
-							<Bulb position={[120, 120, -20]}
-								intensity={2}
-								color='#FFE08C'
-								distance={100}
-								decay={0.2}
-							/>
-							<Bulb position={[125, 100, -290]}
-								intensity={2}
-								color='#FFE08C'
-								distance={300}
-								decay={0.2}
-							/>
-							<Bulb position={[125, 190, 370]}
-								intensity={2}
-								color='#FFE08C'
-								distance={500}
-								decay={1}
-							/>
-							<spotLight position={[45, 240, 40]}
-								intensity={3}
-								color='#FAECC5'
-								angle={Math.PI/4}
-								penumbra={0.01}
-								attenuation={5} anglePower={4}
-							/>
-						</Dragable>
-					</Suspense>
+						<Bulb position={[62.5, 50, -145]}
+							intensity={2}
+							color='#FFE08C'
+							distance={300}
+							decay={0.2}
+						/>
+						<Bulb position={[62.5, 95, 185]}
+							intensity={2}
+							color='#FFE08C'
+							distance={500}
+							decay={1}
+						/>
+						<spotLight position={[22.5, 120, 20]}
+							intensity={3}
+							color='#FAECC5'
+							angle={Math.PI/4}
+							penumbra={0.01}
+							attenuation={5} anglePower={4}
+						/>
+					</Dragable>
+				</Suspense>
 			</Canvas>
 
 			<CameraBtns setIndex={setIndex} />

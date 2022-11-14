@@ -11,7 +11,7 @@ function LoadingBox() {
 
   return (
     <mesh ref={obj}>
-      <boxGeometry attach='geometry' args={[100, 100, 100]} />
+      <boxGeometry attach='geometry' args={[50, 50, 50]} />
       <meshStandardMaterial attach='material' transparent wireframe color={'#fff'} />
     </mesh>
   )

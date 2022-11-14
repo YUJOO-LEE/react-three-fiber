@@ -7,27 +7,27 @@ function CameraBtns({ setIndex }) {
   const pos = {
     0: {
       value: 'Introduction',
-      cameraPos: [55, 125, 95],
-      target: [-80, -300, 0],
+      cameraPos: [27, 62, 47],
+      target: [-40, -150, 0],
     },
     1: {
       value: 'Incident',
-      cameraPos: [153, 127, 45],
-      target: [-50, 0, -100],
+      cameraPos: [71, 63, 22],
+      target: [-25, 0, -50],
     },
     2: {
       value: 'Reference',
-      cameraPos: [50, 150, -200],
-      target: [-200, 10, -1000],
+      cameraPos: [25, 75, -100],
+      target: [-100, 5, -500],
     },
     3: {
       value: 'Contact',
-      cameraPos: [95, 120, 120],
-      target: [-50, 10, 250],
+      cameraPos: [47, 60, 60],
+      target: [-25, 5, 125],
     },
     4: {
       value: 'Yujoo',
-      cameraPos: [50, 300, 220],
+      cameraPos: [25, 150, 110],
       target: [0, 0, 0],
     },
   }
