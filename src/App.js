@@ -18,8 +18,8 @@ function App() {
 			>
 				<axesHelper args={[5]} />
 				<Orbit />
-				{/* <fog attach='fog' args={['#111', 20, 200]} /> */}
-				{/* <ambientLight intensity={0} /> */}
+				<fog attach='fog' args={['#111', 20, 200]} />
+				<ambientLight intensity={0.2} />
 				<Suspense fallback={null}>
 					<Model path={`${process.env.PUBLIC_URL}/hippie/scene.gltf`}
 						position={[200, 5, -350]}
