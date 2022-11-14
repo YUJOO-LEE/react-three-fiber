@@ -5,43 +5,29 @@ import { Canvas } from 'react-three-fiber';
 import { Suspense } from 'react';
 import Orbit from './components/Orbit';
 import Bulb from './components/Bulb';
-import ColorPicker from './components/ColorPicker';
 import Dragable from './components/Dragable';
 import Model from './components/Model';
-import Floor from './components/Floor';
 
 function App() {
 	return (
 		<figure>
-			<ColorPicker/>
 			<Canvas
 				shadowMap
-				style={{background: '#ddd'}}
-				camera={{position:[100, 20, 100]}}	// x, y, z
+				style={{background: '#222'}}
+				camera={{position:[10, 20, 45]}}	// x, y, z
 			>
-				<axesHelper args={[6]} />
+				<axesHelper args={[5]} />
 				<Orbit />
-
 				{/* <fog attach='fog' args={['#111', 20, 200]} /> */}
 				{/* <ambientLight intensity={0} /> */}
 				<Suspense fallback={null}>
-					<Model path={`${process.env.PUBLIC_URL}/adventure/scene.gltf`} />
+					<Model path={`${process.env.PUBLIC_URL}/hippie/scene.gltf`}
+						position={[200, 5, -350]}
+					/>
 				</Suspense>
 				<Dragable>
-					<Bulb position={[85, 100, 95]} />
-					<Bulb position={[95, 100, 85]} />
-					{/* <Bulb position={[45, 10, 55]} />
-					<Bulb position={[55, 10, 45]} /> */}
-					{/* 
-					<Suspense fallback={null}>
-						<Box position={[-2, 1, 0]} />
-					</Suspense>
-					<Suspense fallback={null}>
-							<Box position={[2, 1, 0]} />
-					</Suspense>
-					*/}
+					<Bulb position={[5, 0, 25]} />
 				</Dragable>
-					{/* <Floor position={[0, -0.5, 0]} /> */}
 			</Canvas>
 		</figure>
 	);
