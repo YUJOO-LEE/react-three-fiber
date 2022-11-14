@@ -1,6 +1,6 @@
 import { extend, useThree } from 'react-three-fiber';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-extend({ OrbitControls});
+extend({ OrbitControls });
 
 // 중심축 생성
 function Orbit(props) {

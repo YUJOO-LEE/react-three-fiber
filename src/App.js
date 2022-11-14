@@ -5,8 +5,9 @@ import { Canvas } from 'react-three-fiber';
 import { Suspense } from 'react';
 import Orbit from './components/Orbit';
 import Bulb from './components/Bulb';
-import Dragable from './components/Dragable';
 import Model from './components/Model';
+import CameraControls from './components/CameraControls';
+import CameraBtns from './components/CameraBtns';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				camera={{position:[10, 20, 45]}}	// x, y, z
 			>
 				<axesHelper args={[5]} />
+				<CameraControls />
 				<Orbit />
 				<fog attach='fog' args={['#111', 20, 200]} />
 				<ambientLight intensity={0.2} />
@@ -25,10 +27,9 @@ function App() {
 						position={[200, 5, -350]}
 					/>
 				</Suspense>
-				<Dragable>
-					<Bulb position={[5, 0, 25]} />
-				</Dragable>
+				<Bulb position={[5, 0, 25]} />
 			</Canvas>
+			<CameraBtns />
 		</figure>
 	);
 }
