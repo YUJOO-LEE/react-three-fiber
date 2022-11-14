@@ -2,25 +2,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Fredericka+the+Great&family=Henny+Penny&display=swap');
 
 figure {
-	width: 100%;
-	height: 100vh;
-	background: #111;
-	overflow: hidden;
-	position: relative;
-}
+  width: 100%;
+  height: 100vh;
+  position: relative;
 
-.colorPicker{
-  position: absolute;
-  border: 10vh;
-  right: 5vw;
-  z-index: 10;
-  display: flex;
-  padding: 50px;
-  gap: 40px;
-  
-  li{
-    font: 14/1 'arial';
-    color: #fff;
-    cursor: pointer;
+  .cameraBtns {
+    position: absolute;
+    top: 7vh;
+    right: 10vw;
+    display: flex;
+    z-index: 5;
+    gap: 60px;
+    
+    li {
+      font: 20px/1 'Fredericka the Great';
+      color: #efefef;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &.on {
+        transform: scale(1.3);
+        color: #fff;
+      }
+    }    
+  }
+
+  .txt {
+		article {
+      width: auto;
+      height: auto;
+			position: absolute;
+			right: 10vw;
+			top: 30vh;
+			z-index: -1;
+			opacity: 0;
+			transition: 0.5s;
+
+			h2 {
+        width: auto;
+        height: auto;
+				font: normal italic 9vw/1 'Henny Penny';
+				color: #444;
+				//text-transform: uppercase;
+			}
+
+			&.on {
+				opacity: 1;
+        z-index: 2;
+			}
+
+			&:nth-of-type(1) {
+				right: 10vw;
+				top: 30vh;
+			}
+			&:nth-of-type(2) {
+				right: 10vw;
+				top: 30vh;
+			}
+			&:nth-of-type(3) {
+				left: 10vw;
+				bottom: 15vh;
+			}
+			&:nth-of-type(4) {
+				left: 10vw;
+				bottom: 15vh;
+			}
+			&:nth-of-type(5) {
+				left: 10vw;
+				bottom: 15vh;
+			}
+			&:nth-of-type(6) {
+				right: 5vw;
+				top: 30vh;
+			}
+		}
   }
 }

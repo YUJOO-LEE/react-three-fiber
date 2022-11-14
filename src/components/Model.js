@@ -16,8 +16,9 @@ const Model = (props) => {
   );
 
   return <primitive
+    castShadow
+    {...props}
     object={scene}
-    position={props.position}
     rotation-y={1}
   />
 }
