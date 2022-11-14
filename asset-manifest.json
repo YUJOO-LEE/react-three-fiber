@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-three-fiber/static/css/main.55641538.css",
-    "main.js": "/react-three-fiber/static/js/main.8279789c.js",
+    "main.js": "/react-three-fiber/static/js/main.72adb8ba.js",
     "index.html": "/react-three-fiber/index.html",
     "main.55641538.css.map": "/react-three-fiber/static/css/main.55641538.css.map",
-    "main.8279789c.js.map": "/react-three-fiber/static/js/main.8279789c.js.map"
+    "main.72adb8ba.js.map": "/react-three-fiber/static/js/main.72adb8ba.js.map"
   },
   "entrypoints": [
     "static/css/main.55641538.css",
-    "static/js/main.8279789c.js"
+    "static/js/main.72adb8ba.js"
   ]
 }
