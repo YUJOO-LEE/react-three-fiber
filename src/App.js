@@ -47,13 +47,13 @@ function App() {
 						<Bulb position={[62.5, 50, -145]}
 							intensity={2}
 							color='#FFE08C'
-							distance={300}
+							distance={200}
 							decay={0.2}
 						/>
 						<Bulb position={[62.5, 95, 185]}
 							intensity={2}
 							color='#FFE08C'
-							distance={500}
+							distance={300}
 							decay={1}
 						/>
 						<spotLight position={[22.5, 120, 20]}
