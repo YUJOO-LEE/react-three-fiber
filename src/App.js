@@ -39,26 +39,33 @@ function App() {
 							scale={[10, 10, 10]} // office
 						/>
 					</Suspense>
-				{/* </Dragable> */}
-				<Bulb position={[120, 120, -20]}
-					intensity={2}
-					color='#FFE08C'
-					distance={10}
-					decay={0.2}
-				/>
-				<Bulb position={[125, 100, -290]}
-					intensity={2}
-					color='#FFE08C'
-					distance={10}
-					decay={0.2}
-				/>
-				<spotLight position={[45, 240, 40]}
-					intensity={3}
-					color='#FAECC5'
-					angle={Math.PI/4}
-					penumbra={0.01}
-					attenuation={5} anglePower={4}
-				/>
+				<Dragable>
+					<Bulb position={[120, 120, -20]}
+						intensity={2}
+						color='#FFE08C'
+						distance={100}
+						decay={0.2}
+					/>
+					<Bulb position={[125, 100, -290]}
+						intensity={2}
+						color='#FFE08C'
+						distance={300}
+						decay={0.2}
+					/>
+					<Bulb position={[125, 190, 370]}
+						intensity={2}
+						color='#FFE08C'
+						distance={500}
+						decay={1}
+					/>
+					<spotLight position={[45, 240, 40]}
+						intensity={3}
+						color='#FAECC5'
+						angle={Math.PI/4}
+						penumbra={0.01}
+						attenuation={5} anglePower={4}
+					/>
+				</Dragable>
 			</Canvas>
 
 			<CameraBtns setIndex={setIndex} />

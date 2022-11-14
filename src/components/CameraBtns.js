@@ -6,21 +6,21 @@ function CameraBtns({ setIndex }) {
 
   const pos = {
     0: {
-      cameraPos: [115, 125, 95],
-      target: [0, 0, 0],
+      cameraPos: [55, 125, 95],
+      target: [-80, -300, 0],
     },
     1: {
+      cameraPos: [153, 127, 45],
+      target: [-50, 0, -100],
+    },
+    2: {
+      cameraPos: [50, 150, -200],
+      target: [-200, 10, -1000],
+    },
+    3: {
       cameraPos: [95, 120, 120],
       target: [-50, 10, 250],
     },
-    2: {
-      cameraPos: [-7, -1, 7],
-      target: [0, 0, 0],
-    },
-    3: {
-      cameraPos: [-9, 0, -2],
-      target: [0, 0, 0],
-    }
   }
 
   const handleClick = index => {
@@ -36,7 +36,7 @@ function CameraBtns({ setIndex }) {
 
   return (
     <ul className='cameraBtns' ref={btns}>
-      {Array(6).fill().map((_, idx) => {
+      {Array(4).fill().map((_, idx) => {
         let isOn = '';
         if (idx === 0) isOn = 'on';
 
