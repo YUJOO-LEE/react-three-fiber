@@ -38,6 +38,9 @@ function Txt({ index }) {
       <article>
         <h2>Sit amet</h2>
       </article>
+      <article>
+        <h2>Index</h2>
+      </article>
     </section>
   );
 }
