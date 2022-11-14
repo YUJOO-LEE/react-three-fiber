@@ -35,7 +35,9 @@ function CameraBtns({ setIndex }) {
   const handleClick = index => {
     const btns_li = btns.current.querySelectorAll('li');
     for (const btn of btns_li) btn.classList.remove('on');
-    btns_li[index].classList.add('on');
+    if (index < 4) {
+      btns_li[index].classList.add('on');
+    }
 
     state.cameraPos.set(...pos[index].cameraPos);
     state.target.set(...pos[index].target);
