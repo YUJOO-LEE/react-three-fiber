@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import state from '../state';
+import state from '../../state';
 
 function CameraBtns({ setIndex }) {
   const btns = useRef(null);

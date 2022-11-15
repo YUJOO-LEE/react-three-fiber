@@ -1,5 +1,5 @@
 import { useFrame } from "react-three-fiber";
-import state from '../state';
+import state from '../../state';
 
 function CameraControls() {
   return (

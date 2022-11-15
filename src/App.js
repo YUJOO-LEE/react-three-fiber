@@ -3,14 +3,14 @@ import { Canvas, extend } from 'react-three-fiber';
 //Suspense 리액트 컴포넌트 안쪽에서 비동기 실행되는 구문을 동기화
 import { Suspense, useState } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import Orbit from './components/Orbit';
-import Bulb from './components/Bulb';
+import Orbit from './components/common/Orbit';
+import Bulb from './components/common/Bulb';
 //import Dragable from './components/Dragable';
-import Model from './components/Model';
-import CameraControls from './components/CameraControls';
-import CameraBtns from './components/CameraBtns';
-import Txt from './components/Txt';
-import LoadingBox from './components/LoadingBox';
+import Model from './components/common/Model';
+import CameraControls from './components/common/CameraControls';
+import CameraBtns from './components/common/CameraBtns';
+import Layout from './components/common/Layout';
+import LoadingBox from './components/common/LoadingBox';
 extend({ OrbitControls });
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
 			</Canvas>
 
 			<CameraBtns setIndex={setIndex} />
-			<Txt index={Index} />
+			<Layout index={Index} />
 		</figure>
 	);
 }
