@@ -5,7 +5,7 @@ import { Suspense, useState } from 'react';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import Orbit from './components/Orbit';
 import Bulb from './components/Bulb';
-import Dragable from './components/Dragable';
+//import Dragable from './components/Dragable';
 import Model from './components/Model';
 import CameraControls from './components/CameraControls';
 import CameraBtns from './components/CameraBtns';
@@ -28,7 +28,6 @@ function App() {
 				<axesHelper args={[5]} />
 				<CameraControls />
 				<Orbit />
-				<fog attach='fog' args={['#111', 20, 2000]} />
 				<ambientLight intensity={0.5} />
 
 				<Suspense fallback={<LoadingBox />}>
@@ -37,7 +36,7 @@ function App() {
 						position={[-400, 35, -250]} 
 						scale={[5, 5, 5]} // office
 					/>
-					<Dragable>
+					{/* <Dragable> */}
 						<Bulb position={[60, 60, -10]}
 							intensity={2}
 							color='#FFE08C'
@@ -63,7 +62,7 @@ function App() {
 							penumbra={0.01}
 							attenuation={5} anglePower={4}
 						/>
-					</Dragable>
+					{/* </Dragable> */}
 				</Suspense>
 			</Canvas>
 

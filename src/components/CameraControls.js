@@ -9,7 +9,7 @@ function CameraControls() {
         // 첫번째 인수 : 팬 이동 vector 위치값,
         // 두번째 인수 : 이동 간격 (0-1)
         camera.position.lerp(state.cameraPos, 0.05);
-        scene.orbitControls.target.lerp(state.target, 1);
+        scene.orbitControls.target.lerp(state.target, 0.1);
         scene.orbitControls.update();
 
         // 반복을 돌 때 마다의 현재 위치값

@@ -51,8 +51,6 @@ function CameraBtns({ setIndex }) {
       <ul className='cameraBtns' ref={btns}>
         {Array(4).fill().map((_, idx) => {
           let isOn = '';
-          if (idx === 0) isOn = 'on';
-
           return (
             <li key={idx} className={isOn} onClick={() => handleClick(idx)}>
               {pos[idx].value}
