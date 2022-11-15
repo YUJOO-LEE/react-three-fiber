@@ -1,10 +1,20 @@
-.main{
+.inner.main{
   background: none;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+  color: #fff;
 
   h2{
-    width: auto;
-    height: auto;
-    font: normal 9vw/1 'Special Elite';
-    color: #fff;
+    font-size: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  p{
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 2px;
   }
 }

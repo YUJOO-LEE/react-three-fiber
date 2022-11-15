@@ -1,6 +1,12 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
+@import './content/main';
+@import './content/introduction';
+@import './content/incident';
+@import './content/reference';
+@import './content/contact';
+
 figure{
   width: 100%;
   height: 100vh;
@@ -39,10 +45,9 @@ figure{
 
   section{
 		article{
-      width: 50vw;
-      height: 100vh;
+      width: 100%;
+      height: auto;
 			position: absolute;
-			left: 5vw;
 			top: 20vh;
 			z-index: -1;
 			opacity: 0;
@@ -50,9 +55,9 @@ figure{
 			transition: 0.5s;
 
       .inner{
-        width: 100%;
-        height: 100%;
-        padding: 1vw;
+        width: 50vw;
+        height: 100vh;
+        padding: 120px;
         overflow-y: hidden;
         background: url('../img/page.png') no-repeat center/contain;
         filter: drop-shadow(5px -10px 20px rgba(0,0,0,0.2));

@@ -25,12 +25,12 @@ function App() {
 				style={{background: '#222'}}
 				camera={[25, 150, 110]}
 			>
-				<axesHelper args={[5]} />
+				{/* <axesHelper args={[5]} /> */}
 				<CameraControls />
 				<Orbit />
 				<ambientLight intensity={0.5} />
 
-				<Suspense fallback={<LoadingBox />}>
+				<Suspense fallback={null}>
 					<Model path={`${process.env.PUBLIC_URL}/office/scene.gltf`}
 						// position={[200, 5, -350]} // hippie 용
 						position={[-400, 35, -250]} 
