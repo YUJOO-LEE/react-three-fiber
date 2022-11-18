@@ -10,7 +10,7 @@ import Model from './components/common/Model';
 import CameraControls from './components/common/CameraControls';
 import CameraBtns from './components/common/CameraBtns';
 import Layout from './components/common/Layout';
-import LoadingBox from './components/common/LoadingBox';
+//import LoadingBox from './components/common/LoadingBox';
 extend({ OrbitControls });
 
 function App() {
