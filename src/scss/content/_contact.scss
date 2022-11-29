@@ -3,16 +3,55 @@
   text-align: center;
   font-family: 'Special Elite', cursive;
   color: #000;
+  display: flex;
+  flex-direction: column;
 
   h2{
-    font-size: 50px;
+    font-size: 2.5vw;
     letter-spacing: 2px;
     margin-bottom: 20px;
   }
 
-  p{
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 2px;
+  form{
+    padding: 5% 5% 0;
+    overflow-y: auto;
+
+    ul{
+      li{
+        margin-bottom: 5%;
+        color: #a6793e;
+        text-align: left;
+        font-size: 0.8vw;
+        letter-spacing: 1px;
+
+        input[type=email],input[type=text],textarea{
+          width: 100%;
+          font-family: inherit;
+          line-height: 2;
+          background-color: transparent;
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #a6793e;
+          font-size: 1vw;
+          letter-spacing: 1px;
+          resize: none;
+        }
+
+        &.btns{
+          display: flex;
+          justify-content: space-between;
+
+          input[type=reset],input[type=submit]{
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-family: inherit;
+            font-size: 1.3vw;
+            letter-spacing: 1px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }

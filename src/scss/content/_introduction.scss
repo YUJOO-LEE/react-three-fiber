@@ -3,6 +3,8 @@
   text-align: center;
   font-family: 'Special Elite', cursive;
   color: #000;
+  display: flex;
+  flex-direction: column;
 
   h2{
     font-size: 2.5vw;
@@ -10,7 +12,10 @@
     margin-bottom: 20px;
   }
 
-  div{
+  >div{
+    padding: 0 5%;
+    overflow-y: auto;
+
     .profile{
       display: flex;
       justify-content: space-between;
@@ -44,10 +49,10 @@
     p{
       font-size: 1vw;
       text-align: justify;
-      text-indent: 28px;
+      text-indent: 2vw;
       word-break: break-all;
       line-height: 1.5;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
   }
 }

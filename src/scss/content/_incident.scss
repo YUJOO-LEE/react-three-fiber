@@ -3,6 +3,8 @@
   text-align: center;
   font-family: 'Special Elite', cursive;
   color: #000;
+  display: flex;
+  flex-direction: column;
 
   h2{
     font-size: 2.5vw;
@@ -11,6 +13,8 @@
   }
 
   ul{
+    overflow-y: auto;
+    
     li{
       display: flex;
       gap: 5%;
@@ -42,10 +46,10 @@
         align-items: center;
         font-size: 0.8vw;
         text-align: justify;
-        text-indent: 28px;
+        text-indent: 2vw;
         word-break: break-all;
         line-height: 1.5;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
       }
     }
   }
