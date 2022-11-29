@@ -5,14 +5,49 @@
   color: #000;
 
   h2{
-    font-size: 50px;
+    font-size: 2.5vw;
     letter-spacing: 2px;
     margin-bottom: 20px;
   }
 
-  p{
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 2px;
+  div{
+    .profile{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10%;
+      margin-bottom: 20px;
+
+      .imgWrap{
+        width: 40%;
+        overflow: hidden;
+        mix-blend-mode: luminosity;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      ul{
+        flex: 1;
+        li{
+          font-size: 0.8vw;
+          text-align: right;
+          &:nth-of-type(2){
+            font-size: 1.5vw;
+            margin: 10px 0 20px;
+          }
+        }
+      }
+    }
+
+    p{
+      font-size: 1vw;
+      text-align: justify;
+      text-indent: 28px;
+      word-break: break-all;
+      line-height: 1.5;
+      letter-spacing: 2px;
+    }
   }
 }
